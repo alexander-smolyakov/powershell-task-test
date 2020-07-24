@@ -1,0 +1,29 @@
+trigger:
+- master
+
+jobs:
+- job: windows
+  pool:
+    vmImage: windows-latest
+  steps:
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: |
+        npm pack .
+      errorActionPreference: 'continue'
+      pwsh: true
+    displayName: 'Windows test'
+
+- job: linux
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: |
+        npm pack .
+      errorActionPreference: 'continue'
+      pwsh: true
+      displayName: 'Ubuntu test'
