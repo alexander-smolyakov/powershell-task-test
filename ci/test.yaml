@@ -30,7 +30,7 @@ jobs:
       pwsh: true
       displayName: 'Ubuntu test'
 
-- job: windows
+- job: windowsIgnore
   pool:
     vmImage: windows-latest
   steps:
