@@ -10,6 +10,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
+        cd package-test
         npm pack .
       errorActionPreference: 'continue'
       pwsh: true
@@ -23,6 +24,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
+        cd package-test
         npm pack .
       errorActionPreference: 'continue'
       pwsh: true
