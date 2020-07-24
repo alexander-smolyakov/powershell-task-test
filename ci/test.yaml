@@ -6,10 +6,10 @@ jobs:
   pool:
     vmImage: windows-latest
   steps:
-  - template: ./ci/templates/powershell.yaml
+  - template: ./templates/powershell.yaml
 
 - job: linux
   pool:
     vmImage: ubuntu-latest
   steps:
-  - template: ./ci/templates/powershell.yaml
+  - template: ./templates/powershell.yaml
