@@ -1,0 +1,27 @@
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd package-test
+      npm pack .
+    errorActionPreference: 'continue'
+    pwsh: true
+  displayName: 'Success execution'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'npm pack .'
+    errorActionPreference: 'continue'
+    ignoreLASTEXITCODE: true
+    pwsh: true
+  displayName: 'Error execution w/ ignoreLASTEXITCODE'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'npm pack .'
+    errorActionPreference: 'continue'
+    pwsh: true
+  displayName: 'Error execution w/o ignoreLASTEXITCODE'

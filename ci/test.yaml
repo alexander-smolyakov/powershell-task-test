@@ -6,39 +6,10 @@ jobs:
   pool:
     vmImage: windows-latest
   steps:
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: |
-        cd package-test
-        npm pack .
-      errorActionPreference: 'continue'
-      pwsh: true
-    displayName: 'Windows test'
+  - template: ./ci/templates/powershell.yaml
 
 - job: linux
   pool:
     vmImage: ubuntu-latest
   steps:
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: |
-        cd package-test
-        npm pack .
-      errorActionPreference: 'continue'
-      pwsh: true
-      displayName: 'Ubuntu test'
-
-- job: windowsIgnore
-  pool:
-    vmImage: windows-latest
-  steps:
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: 'npm pack .'
-      errorActionPreference: 'continue'
-      ignoreLASTEXITCODE: true
-      pwsh: true
-    displayName: 'Windows test'
+  - template: ./ci/templates/powershell.yaml
