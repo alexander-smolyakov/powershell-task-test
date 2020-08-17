@@ -11,11 +11,10 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        node -v
         cd package-test
-        Get-Host | Select-Object Version
-        npm pack .
-        npm ping
+        $PackageName = &{ npm pack . }
+        Write-Host "Produced package '$PackageName'"
+        Write-Host "##vso[task.setvariable variable=PackedLibraryFilename]$PackageName"
       errorActionPreference: 'continue'
     displayName: 'Windows test'
 
