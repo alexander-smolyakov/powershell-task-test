@@ -4,7 +4,7 @@ trigger:
 jobs:
 - job: windows
   pool:
-    vmImage: windows-latest
+    name: 'Self-hosted pool'
   steps:
   - task: PowerShell@2
     inputs:
