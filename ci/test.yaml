@@ -10,6 +10,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
+        node -v
         cd package-test
         Get-Host | Select-Object Version
         npm pack .
