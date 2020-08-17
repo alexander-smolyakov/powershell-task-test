@@ -7,16 +7,23 @@ jobs:
     vmImage: windows-latest
     #name: 'Self-hosted pool'
   steps:
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: |
+  # - task: PowerShell@2
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: |
+  #       cd package-test
+  #       $PackageName = &{ npm pack . }
+  #       Write-Host "Produced package '$PackageName'"
+  #       Write-Host "##vso[task.setvariable variable=PackedLibraryFilename]$PackageName"
+  #     errorActionPreference: 'continue'
+  #   displayName: 'Windows test'
+  - pwsh: |
         cd package-test
         $PackageName = &{ npm pack . }
         Write-Host "Produced package '$PackageName'"
         Write-Host "##vso[task.setvariable variable=PackedLibraryFilename]$PackageName"
-      errorActionPreference: 'continue'
-    displayName: 'Windows test'
+    displayName: 'Pack NPM (library)'
+    failOnStderr: false
 
 - job: linux
   pool:
