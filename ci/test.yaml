@@ -18,7 +18,7 @@ jobs:
   #     errorActionPreference: 'continue'
   #   displayName: 'Windows test'
   - pwsh: |
-        cd package-test
+        Set-Location "package-test"
         $PackageName = &{ npm pack . }
         Write-Host "Produced package '$PackageName'"
         Write-Host "##vso[task.setvariable variable=PackedLibraryFilename]$PackageName"
