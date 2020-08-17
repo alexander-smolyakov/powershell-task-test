@@ -2,7 +2,13 @@ trigger:
 - master
 
 jobs:
-- job: windows
+- job: windowsPowerShellV6
+  pool:
+    name: 'Self-hosted pool'
+  steps:
+  - template: ./templates/powershell.yaml
+
+- job: windowsPowerShellV7
   pool:
     vmImage: windows-latest
   steps:
