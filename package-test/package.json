@@ -1,20 +1,13 @@
 {
-    "name": "test",
-    "version": "0.0.1",
-    "devDependencies": {
-      "@types/mocha": "^2.2.44",
-      "@types/node": "^6.0.92",
-      "@types/shelljs": "0.7.4",
-      "mocha": "^3.5.3",
-      "nock": "9.6.1",
-      "react-scripts": "1.1.5",
-      "semver": "4.3.3",
-      "shelljs": "0.7.6",
-      "typescript": "3.9"
-    },
-    "dependencies": {
-      "qs": "^6.9.1",
-      "tunnel": "0.0.6",
-      "underscore": "1.8.3"
-    }
-  }
+  "name": "package-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
