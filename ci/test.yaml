@@ -16,6 +16,7 @@ jobs:
         npm pack .
         npm ping
       errorActionPreference: 'continue'
+      failOnStderr: true
       pwsh: true
     displayName: 'Windows test'
 
